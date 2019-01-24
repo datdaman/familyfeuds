@@ -1,8 +1,13 @@
 import dummyData from '../data/dummyData'
 
 export default (state=dummyData, action) => {
-  //add recipe
   //delete recipe
   //update recipe
-  return state
+
+  switch(action.type){
+    case 'ADD_RECIPE':
+      return [...state, {id:Object.keys(state).length, ...action.payload}]
+    default:
+      return state
+  }
 }

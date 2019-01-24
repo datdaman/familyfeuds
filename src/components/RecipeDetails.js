@@ -15,24 +15,30 @@ class RecipeDetails extends Component {
     return (
       
       <div>
-        <img className="ui centered image" src={_.get(selectedRecipe, 'image_URL')} alt={_.get(selectedRecipe, 'description')}/>
+        <img className="ui centered image" src={_.get(selectedRecipe, 'image_URL')} alt={_.get(selectedRecipe, 'name')}/>
         <div className="ui mini two statistics">
           <div className="statistic">
-            <div className="value">
-              {_.get(selectedRecipe, 'time')}
-            </div>
             <div className="label">
-              Minutes <i className="clock outline icon"/>
+            <i className="clock outline icon"/> {_.get(selectedRecipe, 'time')} Minutes 
             </div>
           </div>
           <div className="statistic">
-            <div className="value">
-              {_.get(selectedRecipe, 'servings')}
-            </div>
             <div className="label">
-              Servings <i className="utensils icon"></i>
+            <i className="utensils icon"/> {_.get(selectedRecipe, 'servings')} Servings 
             </div>
           </div>
+        </div>
+
+        <div className="ui bulleted list">
+          {selectedRecipe.ingredients.map((ingredients , index) => {
+            return (
+
+            <div className="item" key={index}>
+            {console.log(selectedRecipe)}
+              {ingredients}
+            </div>
+            )
+          })}
         </div>
       </div>
     )
