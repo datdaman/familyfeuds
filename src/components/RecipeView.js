@@ -11,7 +11,6 @@ class RecipeView extends Component {
   render() {
     return (
       <div>
-      <Link to="recipe/add">ADD</Link>
       <SearchBar/>
       <div className="ui celled grid">
         <RecipeList/>

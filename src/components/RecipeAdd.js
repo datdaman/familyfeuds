@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Field, FieldArray, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 import { addRecipe } from '../actions'
+import '../styles/RecipeAdd.scss'
 
 
 class RecipeAdd extends Component {
@@ -9,8 +10,8 @@ class RecipeAdd extends Component {
   renderError({error, touched}){
     if(touched && error)
     return(
-      <div className="ui error message">
-        <div className="header">{error}</div>
+      <div class="ui pointing red basic label">
+        {error}
       </div>
     )
   }
@@ -33,11 +34,12 @@ class RecipeAdd extends Component {
 
   renderIngredients = ({ fields }) => (
     <div>
-      <div >
-        Ingredients:
-      <button className="ui circular positive icon right floated button" type="button" onClick={() => fields.push('')}>
-          <i className="plus light icon"/>
-      </button>
+      <div className="field u-margin-bottom-l">
+        <label>Ingredients
+          <button className="ui circular positive icon right floated button" type="button" onClick={() => fields.push('')}>
+              <i className="plus light icon"/>
+          </button>
+        </label>
       </div>
       <ul>
         {fields.map((ingredient, index) => (
@@ -70,15 +72,17 @@ class RecipeAdd extends Component {
     // author time servings ingredients
     console.log(this.props.recipes)
     return (
-      <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-        <Field name="name" component={this.renderInput} label="Recipe Name"/>
-        <Field name="image_URL" component={this.renderInput} label="Add Image Link" />
-        <Field name="time" component={this.renderInput} label="Total Time" />
-        <Field name="servings" component={this.renderInput} label="Servings" />
-        <FieldArray name="ingredients" component={this.renderIngredients} />
-        <div className="u-margin-top">
-        <button className="ui button fluid primary">Add</button></div>
-      </form>
+      <div>
+        <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          <Field name="name" component={this.renderInput} label="Recipe Name"/>
+          <Field name="image_URL" component={this.renderInput} label="Add Image Link" />
+          <Field name="time" component={this.renderInput} label="Total Time" />
+          <Field name="servings" component={this.renderInput} label="Servings" />
+          <FieldArray name="ingredients" component={this.renderIngredients} />
+          <div className="u-margin-top">
+          <button className="ui button fluid primary">Add</button></div>
+        </form>
+      </div>
     )
   }
 }
