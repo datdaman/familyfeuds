@@ -34,7 +34,6 @@ class RecipeDetails extends Component {
             return (
 
             <div className="item" key={index}>
-            {console.log(selectedRecipe)}
               {ingredients}
             </div>
             )

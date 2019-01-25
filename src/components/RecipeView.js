@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import SearchBar from './SearchBar'
 import RecipeList from './RecipeList'
 import RecipeDetails from './RecipeDetails';
-import {Link} from 'react-router-dom'
 
 class RecipeView extends Component {
 
