@@ -1,3 +1,4 @@
+
 .yellow-tint{
   background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
   background-size: cover;
@@ -38,4 +39,10 @@
 
 .recipe-body{
   background-color: rgba(236, 232, 232, 0.836);
+}
+
+.ingredients {
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 2rem;
 }
