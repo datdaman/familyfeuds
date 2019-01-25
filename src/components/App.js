@@ -15,7 +15,7 @@ class App extends Component {
         <div className="ui container" style={{marginTop: '10px'}}>
         
             <Route path='/' component={Header}/> 
-            <Route path='/' exact component={RecipeView}/> 
+            <Route path='/familyfeuds' exact component={RecipeView}/> 
             <Route path='/addRecipe' exact component={RecipeAdd}/> 
         </div>  
       </Router>

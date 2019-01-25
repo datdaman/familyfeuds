@@ -4,7 +4,7 @@ import {NavLink } from 'react-router-dom'
 import '../styles/Header.scss'
 
 class Header extends Component {
-  state = { activeItem: 'home' }
+  state = { activeItem: 'familyfeuds' }
 
   handleItemClick = ({ name }) => this.setState({ activeItem: name })
 
@@ -15,9 +15,8 @@ class Header extends Component {
     return (
       <div className="ui secondary pointing menu u-margin-bottom-sm">
         <NavLink  
-          to="/" 
+          to="/familyfeuds" 
           className="item"
-          exact
           activeclassName='active'
         >
           Home

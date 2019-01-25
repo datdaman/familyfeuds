@@ -9,7 +9,7 @@ export const selectedRecipe = recipe => {
 
 export const addRecipe = recipe => {
   
-  history.push('/')
+  history.push('/familyfeuds')
   return {
     type: 'ADD_RECIPE',
     payload: recipe,
