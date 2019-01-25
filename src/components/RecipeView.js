@@ -11,7 +11,7 @@ class RecipeView extends Component {
     return (
       <div>
       <SearchBar/>
-      <div className="ui celled grid">
+      <div className="ui grid">
         <RecipeList/>
         <div className="thirteen wide column" >
         {!!this.props.selectedRecipe && <RecipeDetails/>}
