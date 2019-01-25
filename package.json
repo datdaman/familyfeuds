@@ -2,7 +2,7 @@
   "name": "familyfeuds",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://datdaman.github.io/",
+  "homepage": "https://datdaman.github.io/familyfeuds",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
