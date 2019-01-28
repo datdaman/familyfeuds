@@ -1,13 +1,13 @@
 {
-  "main.css": "/familyfeuds/static/css/main.36670d1d.chunk.css",
-  "main.js": "/familyfeuds/static/js/main.e61d5689.chunk.js",
-  "main.js.map": "/familyfeuds/static/js/main.e61d5689.chunk.js.map",
-  "static/js/1.bf79e912.chunk.js": "/familyfeuds/static/js/1.bf79e912.chunk.js",
-  "static/js/1.bf79e912.chunk.js.map": "/familyfeuds/static/js/1.bf79e912.chunk.js.map",
+  "main.css": "/familyfeuds/static/css/main.1165caa4.chunk.css",
+  "main.js": "/familyfeuds/static/js/main.7c72694a.chunk.js",
+  "main.js.map": "/familyfeuds/static/js/main.7c72694a.chunk.js.map",
+  "static/js/1.8611efc6.chunk.js": "/familyfeuds/static/js/1.8611efc6.chunk.js",
+  "static/js/1.8611efc6.chunk.js.map": "/familyfeuds/static/js/1.8611efc6.chunk.js.map",
   "runtime~main.js": "/familyfeuds/static/js/runtime~main.0619cf54.js",
   "runtime~main.js.map": "/familyfeuds/static/js/runtime~main.0619cf54.js.map",
-  "static/css/main.36670d1d.chunk.css.map": "/familyfeuds/static/css/main.36670d1d.chunk.css.map",
+  "static/css/main.1165caa4.chunk.css.map": "/familyfeuds/static/css/main.1165caa4.chunk.css.map",
   "index.html": "/familyfeuds/index.html",
-  "precache-manifest.a634bce2506ef683bf05de2c1815c166.js": "/familyfeuds/precache-manifest.a634bce2506ef683bf05de2c1815c166.js",
+  "precache-manifest.6c1b224ecfcfe98ba782e92faadccc5d.js": "/familyfeuds/precache-manifest.6c1b224ecfcfe98ba782e92faadccc5d.js",
   "service-worker.js": "/familyfeuds/service-worker.js"
 }
