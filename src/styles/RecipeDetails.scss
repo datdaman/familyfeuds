@@ -39,6 +39,14 @@
 
 .recipe-body{
   background-color: rgba(236, 232, 232, 0.836);
+
+  .icon-container{
+    display: flex;
+    justify-content: flex-end;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
 
 .ingredients {

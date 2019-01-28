@@ -7,11 +7,21 @@ export const selectedRecipe = recipe => {
   }
 }
 
-export const addRecipe = recipe => {
-  
-  history.push('/familyfeuds')
-  return {
+export const addRecipe = formValues => dispatch => {
+  dispatch( {
     type: 'ADD_RECIPE',
-    payload: recipe,
-  }
+    payload: formValues,
+  })
+
+  history.push('/familyfeuds')
+}
+
+
+export const editRecipe = (id, formValues) => dispatch => {
+  dispatch( {
+    type: 'EDIT_RECIPE',
+    payload: formValues,
+  })
+    
+  history.push('/familyfeuds')
 }

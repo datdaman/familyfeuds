@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 import _ from "lodash";
 
 import "../styles/RecipeDetails.scss";
 
 class RecipeDetails extends Component {
+
   render() {
     console.log(this.props.selectedRecipe);
     const { selectedRecipe } = this.props;
@@ -22,6 +24,9 @@ class RecipeDetails extends Component {
           <span>{_.get(selectedRecipe, "name")}</span>
         </div>
         <div className="recipe-body u-padding-md  u-margin-top-xs">
+          <div className="icon-container">
+            <Link to={`editRecipe/${selectedRecipe.id}`}><i className="edit icon"/></Link>
+          </div>
           <div className="ui mini two statistics u-margin-top-xs">
             <div className="statistic">
               <div className="label">
@@ -43,6 +48,7 @@ class RecipeDetails extends Component {
                 if (index % 2 === 0) {
                   return <div key={index} className="ingredients">{ingredients}</div>;
                 }
+                return null;
               })}
             </div>
             <div className="column centered aligned ">
@@ -50,6 +56,7 @@ class RecipeDetails extends Component {
                 if (index % 2 !== 0) {
                   return <div key={index} className="ingredients"> {ingredients} </div>;
                 }
+                return null;
               })}
             </div>
           </div>

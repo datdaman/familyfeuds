@@ -7,11 +7,14 @@ import '../styles/RecipeList.scss'
 
 class RecipeList extends Component {
 
+  componentWillUnmount(){
+    this.props.selectedRecipe(null)
+  }
+
   render() {
     return (
       <div className="three wide column">
       <div className="ui middle aligned divided items">
-      {console.log(this.props.recipes)}
         {this.props.recipes.map(recipe => {
           return(
             <div key={recipe.id} className="item item-list" onClick={() => this.props.selectedRecipe(recipe)}>
