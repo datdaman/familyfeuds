@@ -25,7 +25,7 @@ class RecipeDetails extends Component {
         </div>
         <div className="recipe-body u-padding-md  u-margin-top-xs">
           <div className="icon-container">
-            <Link to={`editRecipe/${selectedRecipe.id}`}><i className="edit icon"/></Link>
+            <Link to={`/editRecipe/${selectedRecipe.id}`}><i className="edit icon"/></Link>
           </div>
           <div className="ui mini two statistics u-margin-top-xs">
             <div className="statistic">
