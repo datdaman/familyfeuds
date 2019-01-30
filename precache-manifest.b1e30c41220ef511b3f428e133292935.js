@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/familyfeuds/static/js/runtime~main.0619cf54.js"
   },
   {
-    "revision": "70ff349efad88a28eeb7",
-    "url": "/familyfeuds/static/js/main.70ff349e.chunk.js"
+    "revision": "e738cede5e3bb9225947",
+    "url": "/familyfeuds/static/js/main.e738cede.chunk.js"
   },
   {
     "revision": "8611efc6c85bb60b862a",
     "url": "/familyfeuds/static/js/1.8611efc6.chunk.js"
   },
   {
-    "revision": "70ff349efad88a28eeb7",
+    "revision": "e738cede5e3bb9225947",
     "url": "/familyfeuds/static/css/main.1165caa4.chunk.css"
   },
   {
-    "revision": "65aa545e17e9597f4a1696d3a75aa4bb",
+    "revision": "d847c0c6f19623f8389356e75355c795",
     "url": "/familyfeuds/index.html"
   }
 ];
