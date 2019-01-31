@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 class SearchBar extends Component {
 
-  state = { term: '' }
-
-  onFormSubmit = e => {
-    e.preventDefault();
-    console.log('search')
-  }
+  renderInput = ({ input, type, placeholder }) => {
+    return (
+        <React.Fragment>
+          <input 
+            {...input} 
+            type={type} 
+            placeholder={placeholder}
+            autoComplete='off'
+          />
+          <i className="search icon"/>
+        </React.Fragment>
+    );
+  };
 
   render(){
     return(
       <div className="ui segment search-bar">
-        <form className="ui form icon input" style={{width: '100%'}} onSubmit={this.onFormSubmit}>
-            <input 
-              type="text"  
-              placeholder="Search "
+        <form className="ui form icon input" style={{width: '100%'}} onSubmit={e => e.preventDefault()}>
+            <Field
+              name='search'
+              type='text'
+              component={this.renderInput}
+              placeholder='Search'
             />
-            <i className="search icon"/>
         </form>
       </div>
     )
   }
 }
 
-export default SearchBar;
+export default reduxForm({
+  form: 'searchForm'
+})(SearchBar);
