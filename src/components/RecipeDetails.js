@@ -8,7 +8,6 @@ import "../styles/RecipeDetails.scss";
 class RecipeDetails extends Component {
 
   render() {
-    console.log(this.props.selectedRecipe);
     const { selectedRecipe } = this.props;
 
     return (
@@ -25,7 +24,7 @@ class RecipeDetails extends Component {
         </div>
         <div className="recipe-body u-padding-md  u-margin-top-xs">
           <div className="icon-container">
-            <Link to={`/editRecipe/${selectedRecipe.id}`}><i className="edit icon"/></Link>
+            <Link to={`/editRecipe/${selectedRecipe.id}`}><i className="edit icon"/>Edit</Link>
           </div>
           <div className="ui mini two statistics u-margin-top-xs">
             <div className="statistic">
