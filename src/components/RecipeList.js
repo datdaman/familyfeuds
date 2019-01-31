@@ -32,15 +32,13 @@ class RecipeList extends Component {
 //TODO: Improve searching functionality
   render() {
     let filteredArray = [];
-
     if (!!this.props.search) {
-      const rules = new RegExp(this.props.search, "gi");
+      const rules = new RegExp(this.props.search, "i");
       filteredArray = this.props.recipes.filter(
-        recipe => {
-          return rules.test(recipe.name)
-        }
+        recipe => rules.test(recipe.name)
       );
     }
+    
     return (
       <div className="three wide column">
         <div className="ui middle aligned divided items">
