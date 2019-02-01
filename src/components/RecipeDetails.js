@@ -11,7 +11,7 @@ class RecipeDetails extends Component {
     const { selectedRecipe } = this.props;
 
     return (
-      <div>
+      <div className="thirteen wide column" >
         <div className="recipe-img-container">
           <img
             className="ui centered rounded large image"

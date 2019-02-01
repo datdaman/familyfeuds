@@ -13,12 +13,12 @@ class RecipeForm extends Component {
       );
   }
 
-  renderInput = ({ input, label, meta, type }) => {
+  renderInput = ({ input, label, meta, type, placeholder }) => {
     const className = `field ${meta.error && meta.touched ? "error" : ""}`;
     return (
       <div className={className}>
         <label>{label}</label>
-        <input {...input} type={type} />
+        <input {...input} type={type} placeholder={placeholder} />
         {this.renderError(meta)}
       </div>
     );
@@ -30,16 +30,9 @@ class RecipeForm extends Component {
 
   renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
     <div>
-      <div className="field u-margin-bottom-l">
+      <div className="field u-margin-bottom-sm ingredient">
         <label>
           Ingredients
-          <button
-            className="ui circular positive icon right floated button"
-            type="button"
-            onClick={() => fields.push()}
-          >
-            <i className="plus light icon" />
-          </button>
           {submitFailed && error && (
             <div className="ui left pointing red basic label u-margin-left-md">
               <i className="exclamation circle icon" />
@@ -47,27 +40,33 @@ class RecipeForm extends Component {
             </div>
           )}
         </label>
+        
+        <button
+            className="ui positive icon button form-btn"
+            type="button"
+            onClick={() => fields.push()}
+          >
+            <i className="plus light icon" />
+        </button>
       </div>
-      <ul>
         {fields.map((ingredient, index) => (
-          <li key={index}>
-            <button
-              className="ui circular negative icon right floated button"
-              type="button"
-              title="Remove Member"
-              onClick={() => fields.remove(index)}
-            >
-              <i className="minus light icon" />
-            </button>
-            <h4>#{index + 1}</h4>
+          <div className="ingredient" key={index}>
             <Field
               name={`${ingredient}`}
               component={this.renderInput}
               type="text"
+              placeholder={`#${index + 1}`}
             />
-          </li>
+            <button
+              className="ui negative icon button form-btn"
+              type="button"
+              title="Remove Ingredient"
+              onClick={() => fields.remove(index)}
+            >
+              <i className="trash alternate icon" />
+            </button>
+          </div>
         ))}
-      </ul>
     </div>
   );
 
@@ -127,7 +126,7 @@ const validate = formValues => {
   else if (formValues.servings < 1) errors.servings = "Must be at least 1";
 
   if (!formValues.ingredients || !formValues.ingredients.length) {
-    errors.ingredients = { _error: "At least one member must be entered" };
+    errors.ingredients = { _error: "At least one ingredient must be entered" };
   } else {
     const ingredientsErrorArray = [];
     formValues.ingredients.forEach((ingredient, index) => {

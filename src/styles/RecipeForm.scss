@@ -1,4 +1,15 @@
 
-.test{
-  height:36px;
+.ingredient{
+  display: flex;
+  justify-content: space-between;
+  
+  .field{
+    flex:1;
+  }
+
+  .form-btn{
+    margin: 2px;
+    width: 40px;
+    max-height: 40px;
+  }
 }

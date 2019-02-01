@@ -5,26 +5,17 @@ import '../styles/Header.scss'
 
 class Header extends Component {
   render() {
-      
     return (
       <div className="ui secondary pointing menu u-margin-bottom-sm">
-        <NavLink  
-          to="/familyfeuds" 
-          className="item"
-        >
-          Home
-        </NavLink >
-        <NavLink  
-          to="/addRecipe" 
-          className="item"
-        >
-          Add Recipe
-        </NavLink >
+
+        <NavLink to="/familyfeuds" className="item">Home</NavLink >
+        <NavLink to="/addRecipe" className="item">Add Recipe</NavLink >
         <div className="right menu">
           <button className="ui item">
             Logout
           </button>
         </div>
+
       </div>
     )
   }
