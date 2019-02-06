@@ -53,7 +53,7 @@ class RecipeList extends Component {
 
 const mapStateToProps = state => {
   return {
-    recipes: state.recipes,
+    recipes: Object.values(state.recipes),
     search: _.get(state.form.searchForm, "values.search")
   };
 };

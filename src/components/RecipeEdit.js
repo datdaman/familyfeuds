@@ -40,7 +40,7 @@ class RecipeEdit extends Component {
           onSubmit={this.onSave}
         />
         <Modal
-          title="Edit Stream"
+          title="Edit Recipe"
           content="Are you sure you want to save the changes?"
           actions={this.renderActions()}
           active={this.state.active}

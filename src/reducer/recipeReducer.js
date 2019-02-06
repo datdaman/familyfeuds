@@ -1,17 +1,16 @@
+import _ from 'lodash'
 import dummyData from '../data/dummyData'
-import {ADD_RECIPE, EDIT_RECIPE} from '../actions/types'
+import {ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE} from '../actions/types'
 
 export default (state=dummyData, action) => {
-  //delete recipe
-  //update recipe
 
   switch(action.type){
     case ADD_RECIPE:
-      return [...state, {id:Object.keys(state).length, ...action.payload}]
+      return {...state, [action.payload.id]:action.payload}
     case EDIT_RECIPE:
-      const newState = {...state}
-      newState[action.payload.id] = action.payload
-      return Object.values(newState)
+      return {...state, [action.payload.id]:action.payload}
+    case DELETE_RECIPE:
+      return _.omit(state, action.payload)
     default:
       return state
   }

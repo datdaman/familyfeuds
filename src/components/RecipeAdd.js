@@ -6,7 +6,10 @@ import RecipeForm from "./RecipeForm";
 
 class RecipeAdd extends Component {
   onSubmit = formValues => {
-    this.props.addRecipe(formValues);
+    const {recipes} = this.props
+    const recipe = Object.values(recipes)[Object.keys(recipes).length-1]
+    let id = !!recipe ? recipe.id + 1 : 0
+    this.props.addRecipe({id:id,...formValues});
   };
 
   render() {
@@ -19,7 +22,11 @@ class RecipeAdd extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return { recipes: state.recipes }
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { addRecipe }
 )(RecipeAdd);
