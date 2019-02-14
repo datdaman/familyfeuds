@@ -7,27 +7,21 @@ import Modal from './Modal'
 class RecipeEdit extends Component {
 
   state = {
-    active:'',
+    isModelOpen:false,
     formValues:{}
   }
 
-  onSave = (formValues) => {
-    this.setState({active:'active', formValues: formValues})
+  onRecipeEdit = () => {
+    this.props.editRecipe(this.state.formValues)
+    this.onModalClose()
   }
 
-  renderActions() {
-    return(
-      <React.Fragment>
-        <button 
-          className="ui button primary" 
-          onClick={() => this.props.editRecipe(this.state.formValues)}
-        >Yes</button>
-        <button 
-          className="ui button" 
-          onClick={() => this.setState({active:''})}
-        >No</button>
-      </React.Fragment>
-    )
+  onModalClose = () => {
+    this.setState({isModelOpen:false})
+  }
+
+  onModalOpen = (formValues) => {
+    this.setState({isModelOpen:true, formValues: formValues})
   }
 
 //TODO: use userid to only show edit on users added recipes
@@ -37,14 +31,14 @@ class RecipeEdit extends Component {
         <h3>Edit a Recipe</h3>
         <RecipeForm 
           initialValues={{...this.props.recipe}}
-          onSubmit={this.onSave}
+          onSubmit={this.onModalOpen}
         />
-        <Modal
+        {this.state.isModelOpen && <Modal
           title="Edit Recipe"
-          content="Are you sure you want to save the changes?"
-          actions={this.renderActions()}
-          active={this.state.active}
-        />
+          content="Are you sure you want to save these changes?"
+          onAction={this.onRecipeEdit}
+          onClose={this.onModalClose}
+        />}
       </div>
     )
   }
