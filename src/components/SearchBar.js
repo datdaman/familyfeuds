@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
 
@@ -25,12 +26,16 @@ class SearchBar extends Component {
               name='search'
               type='text'
               component={this.renderInput}
-              placeholder='Search'
+              placeholder={this.props.placeholder}
             />
         </form>
       </div>
     )
   }
+}
+
+SearchBar.propTypes = {
+  placeholder: PropTypes.string.isRequired
 }
 
 export default reduxForm({

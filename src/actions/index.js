@@ -1,15 +1,9 @@
 import history from '../history'
-import {RECIPE_SELECTED, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE} from './types'
-
-export const selectedRecipe = recipe => {
-  return {
-    type: RECIPE_SELECTED,
-    payload: recipe,
-  }
-}
+import {ADD_RECIPE, EDIT_RECIPE, 
+        DELETE_RECIPE} from './types'
 
 export const addRecipe = formValues => dispatch => {
-  dispatch( {
+  dispatch({
     type: ADD_RECIPE,
     payload: formValues,
   })
@@ -18,7 +12,7 @@ export const addRecipe = formValues => dispatch => {
 }
 
 export const deleteRecipe = recipeID => dispatch => {
-  dispatch( {
+  dispatch({
     type: DELETE_RECIPE,
     payload: recipeID,
   })
@@ -27,7 +21,7 @@ export const deleteRecipe = recipeID => dispatch => {
 }
 
 export const editRecipe = formValues => dispatch => {
-  dispatch( {
+  dispatch({
     type: EDIT_RECIPE,
     payload: formValues,
   })

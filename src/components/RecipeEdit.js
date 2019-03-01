@@ -25,9 +25,11 @@ class RecipeEdit extends Component {
   }
 
 //TODO: use userid to only show edit on users added recipes
+
   render() {
     return (
       <div>
+        <button onClick={() => this.props.history.goBack()}>BACK</button>
         <h3>Edit a Recipe</h3>
         <RecipeForm 
           initialValues={{...this.props.recipe}}

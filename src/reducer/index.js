@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
-import recipeReducer from './recipeReducer'
-import recipeSelectedReducer from './recipeSelectedReducer'
+import recipe from './recipe'
 import { reducer as formReducer } from 'redux-form'
 
 export default combineReducers({
-  recipes: recipeReducer,
-  selectedRecipe: recipeSelectedReducer,
+  recipes: recipe,
   form: formReducer
 })

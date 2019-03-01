@@ -5,6 +5,10 @@ $medium: 30px;
 $large: 40px;
 $extraLarge: 50px;
 
+.u-margin-0 {
+  margin: 0 !important;
+}
+
 .u-margin-xs {
   margin:$extraSmall !important;
 }
